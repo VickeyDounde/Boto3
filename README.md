@@ -34,6 +34,7 @@ Describe instance using Boto3
 import boto3
 
 def describe_ec2_instance():
+
     try:
         print ("Describing EC2 instance")
         resource_ec2 = boto3.client("ec2")
@@ -41,6 +42,7 @@ def describe_ec2_instance():
         return str(resource_ec2.describe_instances()["Reservations"][0]["Instances"][0]["InstanceId"])
     except Exception as e:
         print(e)
+
 describe_ec2_instance()
 ```
 Reboot Instance using Boto3
@@ -48,6 +50,7 @@ Reboot Instance using Boto3
 import boto3
 
 def reboot_ec2_instance():
+
     try:
         print ("Reboot EC2 instance")
         instance_id = describe_ec2_instance()
@@ -55,6 +58,7 @@ def reboot_ec2_instance():
         print(resource_ec2.reboot_instances(InstanceIds=[instance_id]))
     except Exception as e:
         print(e)
+
 reboot_ec2_instance()
 ```
 Stop Instance using Boto3
@@ -62,6 +66,7 @@ Stop Instance using Boto3
 import boto3
 
 def stop_ec2_instance():
+
     try:
         print ("Stop EC2 instance")
         instance_id = describe_ec2_instance()
@@ -69,6 +74,7 @@ def stop_ec2_instance():
         print(resource_ec2.stop_instances(InstanceIds=[instance_id]))
     except Exception as e:
         print(e)
+
 stop_ec2_instance()
 ```
 Start Instance using Boto3
@@ -76,6 +82,7 @@ Start Instance using Boto3
 import boto3
 
 def start_ec2_instance():
+
     try:
         print ("Start EC2 instance")
         instance_id = describe_ec2_instance()
@@ -83,6 +90,7 @@ def start_ec2_instance():
         print(resource_ec2.start_instances(InstanceIds=[instance_id]))
     except Exception as e:
         print(e)
+
 start_ec2_instance()
 ```
 Terminate Instance using Boto3
@@ -90,6 +98,7 @@ Terminate Instance using Boto3
 import boto3
 
 def terminate_ec2_instance():
+
     try:
         print ("Terminate EC2 instance")
         instance_id = describe_ec2_instance()
@@ -97,5 +106,6 @@ def terminate_ec2_instance():
         print(resource_ec2.terminate_instances(InstanceIds=[instance_id]))
     except Exception as e:
         print(e)
+
 terminate_ec2_instance()
 ```
