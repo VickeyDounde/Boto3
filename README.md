@@ -21,9 +21,9 @@ def create_ec2_instance():
 
 create_ec2_instance()
 ```
-###
+
     MaxCount=1, # Keep the max count to 1, unless you have a requirement to increase it
     InstanceType="t2.micro", # Change it as per your need, But use the Free tier one
     KeyName="ec2-key" # Change it to the name of the key you have.
     :return: Creates the EC2 instance.
-###
+
