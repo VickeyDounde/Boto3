@@ -2,6 +2,12 @@
 by Vivek Dounde
 
 Create a EC2 Instance using boto3
+Things to Keep in Mind:-
+Change ImageId accordingly
+MaxCount=1, # Keep the max count to 1, unless you have a requirement to increase it
+InstanceType="t2.micro", # Change it as per your need, But use the Free tier one
+KeyName="ec2-key" # Change it to the name of the key you have.
+:return: Creates the EC2 instance.
 ```
 import boto3
 
@@ -22,11 +28,6 @@ def create_ec2_instance():
 
 create_ec2_instance()
 ```
-Things to Keep in Mind:-
-MaxCount=1, # Keep the max count to 1, unless you have a requirement to increase it
-InstanceType="t2.micro", # Change it as per your need, But use the Free tier one
-KeyName="ec2-key" # Change it to the name of the key you have.
-:return: Creates the EC2 instance.
 
 Describe instance using Boto3
 
